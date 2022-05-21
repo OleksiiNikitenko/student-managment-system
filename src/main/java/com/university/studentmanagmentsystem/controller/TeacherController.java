@@ -2,6 +2,7 @@ package com.university.studentmanagmentsystem.controller;
 
 import com.university.studentmanagmentsystem.model.Teacher;
 import com.university.studentmanagmentsystem.service.TeacherService;
+import javax.transaction.Transactional;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,6 +42,7 @@ public class TeacherController {
         return new ResponseEntity<>(updateTeacher, HttpStatus.OK);
     }
 
+    @Transactional
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteTeacher(@PathVariable("id") Long id) {
         teacherService.deleteTeacher(id);
