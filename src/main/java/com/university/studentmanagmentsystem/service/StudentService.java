@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class StudentService {
@@ -39,4 +40,7 @@ public class StudentService {
             .orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found..."));
     }
 
+//    public MultipartFile uploadMarks(MultipartFile file) {
+//        return studentRepository.save(file);
+//    }
 }

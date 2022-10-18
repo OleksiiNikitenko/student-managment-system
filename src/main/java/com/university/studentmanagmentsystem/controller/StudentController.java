@@ -2,12 +2,14 @@ package com.university.studentmanagmentsystem.controller;
 
 import com.university.studentmanagmentsystem.model.Student;
 import com.university.studentmanagmentsystem.service.StudentService;
+import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/student")
@@ -48,4 +50,10 @@ public class StudentController {
         studentService.deleteStudent(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+//    @PostMapping("/upload")
+//    public ResponseEntity<?> uploadMarks(@RequestParam("file") MultipartFile file) {
+//        studentService.uploadMarks(file);
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 }
